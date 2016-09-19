@@ -1,8 +1,21 @@
 "use strict";
 
-let user = require ('./user');
+let log = require('logger')(module);
+let db = require('db');
+db.connect();
 
-let Vasua = new user.User("Vasua");
-let Dima = new user.User("Dima");
+let User = require ('./user');
 
-Dima.hello(Vasua);
+let run = () => {
+	let Vasua = new User("Vasua");
+	let Dima = new User("Dima");
+
+	Dima.hello(Vasua);
+
+	log(db.getPhrase("run succesfull"));
+}
+
+if(module.parent) { exports.run = run }
+else { run() }
+
+//console.log(module);
