@@ -15,6 +15,7 @@ class PhraseError extends Error{
 		Error.captureStackTrace(this);
 	}
 }
+
 class HttpError extends Error{
 	
 	constructor(status, message){
@@ -38,7 +39,7 @@ function makePage(page){
 		throw new HttpError(404, "Нет такой страници => " + page);
 	}
 
-	return util.format("%s, %s!", getPhrase("nam1e"), getPhrase("age"));
+	return util.format("%s, %s!", getPhrase("name"), getPhrase("age"));
 }
 
 try{

@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
     "dimon": "babel myEs2015 -d dimon@champion.js"
   },
   "babel": {
